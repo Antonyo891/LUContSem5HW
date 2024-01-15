@@ -1,7 +1,12 @@
 Урок 5. Docker Compose и Docker Swarm
 Задание 1:
 # 1) создать сервис, состоящий из 2 различных контейнеров: 1 - веб, 2 - БД. <br>
-  
+  ## создадим docker-compose.yaml файл с двумя сервисами db - mysql и web - phpmyadmin: <br>
+   ![yaml](https://github.com/Antonyo891/LUContSem5HW/blob/master/yaml11.png)
+   ## необходимо перейти в директорию с файлом .yaml и выполнить команду docker compose up -d
+   ![docker-compose1](https://github.com/Antonyo891/LUContSem5HW/blob/master/DC1.2.png)
+   ![docker-compose1](https://github.com/Antonyo891/LUContSem5HW/blob/master/DC1.4.png)
+   ![docker-compose1](https://github.com/Antonyo891/LUContSem5HW/blob/master/DC1.3.png)
 # 2) далее необходимо создать 3 сервиса в каждом окружении (dev, prod, lab) <br>
 ## На рег.ру созданы два облачных сервера для создания общего кластера.
     ![manager](https://github.com/Antonyo891/LUContSem5HW/blob/master/DSM1.png)
