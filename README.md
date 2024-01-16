@@ -50,6 +50,18 @@
 
 # Задание 2*: <br> 
 # 1) нужно создать 2 ДК-файла, в которых будут описываться сервисы <br>
+## Инициализируем кластер:<br>
+root@cv3512249:~# docker swarm init
+Swarm initialized: current node (vqkkyzq6s8qv7hsmm9yihqsoa) is now a manager.
+To add a worker to this swarm, run the following command:
+  docker swarm join --token SWMTKN-1-00x4nk7b5xjwbw61vreajmc7mur172z4398sjdyyrzt6c8i28s-3fim5e4mugcdtrrguwtjw1l2p 192.168.0.160:2377
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+## и присоединяем ноды через docker swarm join ...
+![nodes2](https://github.com/Antonyo891/LUContSem5HW/blob/master/NodesT2.png)
+## создадим 2 сети Overlay для последующей связи сервисов в окружениях lab и dev (net_lab, net_dev)  
+![net2](https://github.com/Antonyo891/LUContSem5HW/blob/master/Net2.png)
+## создаем два файла yaml, прописываем название сети
+
 # 2) повторить задание 1 для двух окружений: lab, dev
 # 3) обязательно проверить и зафиксировать результаты, чтобы можно было выслать преподавателю для проверки
 
