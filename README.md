@@ -8,8 +8,8 @@
    ![docker-compose1](https://github.com/Antonyo891/LUContSem5HW/blob/master/DC1.4.png)
    ![docker-compose1](https://github.com/Antonyo891/LUContSem5HW/blob/master/DC1.3.png)
 # 2) далее необходимо создать 3 сервиса в каждом окружении (dev, prod, lab) <br>
-## На рег.ру созданы два облачных сервера для создания общего кластера.
-    ![manager](https://github.com/Antonyo891/LUContSem5HW/blob/master/DSM1.png)
+## На рег.ру созданы три виртуальных сервера для создания общего кластера.
+   ![manager](https://github.com/Antonyo891/LUContSem5HW/blob/master/DSM1.png)
    ![worker](https://github.com/Antonyo891/LUContSem5HW/blob/master/DSW1.png)
    ## Работать с серверами буду через ssh из консоли ВМ Ubuntu (консоль удобнее).<br>
    ## Инициализируем кластер:<br>
@@ -58,11 +58,15 @@ To add a worker to this swarm, run the following command:
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
 ## и присоединяем ноды через docker swarm join ...
 ![nodes2](https://github.com/Antonyo891/LUContSem5HW/blob/master/NodesT2.png)
-## создадим 2 сети Overlay для последующей связи сервисов в окружениях lab и dev (net_lab, net_dev)  
-![net2](https://github.com/Antonyo891/LUContSem5HW/blob/master/Net2.png)
-## создаем два файла yaml, прописываем название сети
-
+## создаем два файла yaml.
+![Dev.yaml](https://github.com/Antonyo891/LUContSem5HW/blob/master/devYaml%201.png)
+![Lab.yaml](https://github.com/Antonyo891/LUContSem5HW/blob/master/labYaml%201.png)
 # 2) повторить задание 1 для двух окружений: lab, dev
+## создаем сервисы: <br> 
+docker stack depoy -c /home/lab.yaml lab
+docker stack deploy -c /home/dev.yaml dev
+![dev_stack](https://github.com/Antonyo891/LUContSem5HW/blob/master/devstack.png)
+## в общем если stack по очереди разворачивать, тот что  первый развернут работает, при развораивании второго ошибок не пишеи, но mysql постоянно падает и перезапускается в итогк сервер зависает....ничего сделать не смог... 
 # 3) обязательно проверить и зафиксировать результаты, чтобы можно было выслать преподавателю для проверки
 
 Задание со звездочкой - повышенной сложности, это нужно учесть при выполнении (но сделать его необходимо).
